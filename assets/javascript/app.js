@@ -26,8 +26,9 @@ $.ajax({
         						"data-animated='"+	response.data[i].images.fixed_height.url + "'" +
         						"data-still='" +	response.data[i].images.fixed_height_still.url + "'" +
         						"data='still' class='image'>");
-        $("#rating"+ i).html("<h3>" + response.data[i].rating + "</h3>");
-        $("#title"+ i).html("<h5><a href='"+response.data[i].images.fixed_height_small.url+"' target='_blank'>"+ response.data[i].url + "</h5>");
+        var y = response.data[i].rating.toUpperCase();
+        $("#rating"+ i).html("<h3>Rating: " + y + "</h3>");
+        $("#title"+ i).html("<h5><a href='"+response.data[i].images.fixed_height.url+"' target='_blank'>"+ response.data[i].images.fixed_height.url + "</h5>");
       }
     });
 }
