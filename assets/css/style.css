@@ -13,12 +13,25 @@ table {
 	margin: 5px;
 	padding: 5px;
 }
-
+img {
+	border-radius: 25px;
+}
+h1 {
+	font-family: 'Fredoka One', cursive;
+}
+h2 {
+	font-family: 'Archivo Black', sans-serif;
+}
+p {
+	font-size: 18px;
+	font-family: 'Archivo Black', sans-serif;
+}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th  {
  border: none;
 }
 .panel-heading {
 	background-image: url(../images/triangular.png);
+	border-radius: 25px;
 }
 .mybuttons {
 	background-image: url(../images/redox_02.png);
@@ -32,9 +45,10 @@ table {
 	position: fixed;
 	z-index: 2;
 	top: 0px;
+	margin: 0px;
 }
 .tablesect {
 	position: absolute;
-	top: 200px;
+	top: 245px;
 	left: 1px;
 }
