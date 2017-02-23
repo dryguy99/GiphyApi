@@ -22,9 +22,9 @@ $.ajax({
       //console.log(response.data[0].user.display_name);
       var j = 0;
       for (i=0; i < 12; i++) {
-        $("#display"+ i).html("<img src='" + response.data[i].images.fixed_height_small_still.url + "'" +
-        						"data-animated='"+	response.data[i].images.fixed_height_small.url + "'" +
-        						"data-still='" +	response.data[i].images.fixed_height_small_still.url + "'" +
+        $("#display"+ i).html("<img src='" + response.data[i].images.fixed_height_still.url + "'" +
+        						"data-animated='"+	response.data[i].images.fixed_height.url + "'" +
+        						"data-still='" +	response.data[i].images.fixed_height_still.url + "'" +
         						"data='still' class='image'>");
         $("#rating"+ i).html("<h3>" + response.data[i].rating + "</h3>");
         $("#title"+ i).html("<h5><a href='"+response.data[i].images.fixed_height_small.url+"' target='_blank'>"+ response.data[i].url + "</h5>");
@@ -46,7 +46,7 @@ function renderButtons() {
          console.log(movieArray[i]);
          var a = $("<button>");
          // Adding a class of movie to our button
-         a.addClass("movie");
+         a.addClass("btn btn-lg btn-success movie");
          // Adding a data-attribute
          a.attr("data-name", movieArray[i]);
          // Providing the initial button text

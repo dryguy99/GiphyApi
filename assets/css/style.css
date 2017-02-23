@@ -1,4 +1,7 @@
-body {
+section {
 	min-width: 600px;
-	margin: 10px auto;
+	margin: 5px auto;
+}
+.btn {
+	margin: 5px;
 }
