@@ -18,9 +18,14 @@ img {
 }
 h1 {
 	font-family: 'Fredoka One', cursive;
+	font-size: 40px;
 }
 h2 {
 	font-family: 'Archivo Black', sans-serif;
+}
+h4 {
+	font-family: 'Archivo Black', sans-serif;
+	color: #0033cc;
 }
 p {
 	font-size: 18px;
@@ -33,13 +38,19 @@ p {
 	background-image: url(../images/triangular.png);
 	border-radius: 25px;
 }
+.btn {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	/*letter-spacing: 1px;*/
+}
 .mybuttons {
 	background-image: url(../images/redox_02.png);
 	max-width: 1600px;
 	margin: 0px auto;
 }
 .topsect {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 .fixedheader {
 	position: fixed;
@@ -49,6 +60,10 @@ p {
 }
 .tablesect {
 	position: absolute;
-	top: 245px;
+	top: 240px;
 	left: 1px;
 }
+.myfooter {
+	position: relative;
+	background-image: url(../images/redox_02.png);
+	bottom: 0px;

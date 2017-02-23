@@ -3,7 +3,7 @@ var movieTitle = "";
 
 
     
-var movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars"];
+var movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
  
 
 
@@ -22,10 +22,12 @@ $.ajax({
       //console.log(response.data[0].user.display_name);
       var j = 0;
       for (i=0; i < 12; i++) {
+      	//Generate the images with the links for moving and still images embeded
         $("#display"+ i).html("<img src='" + response.data[i].images.fixed_height_still.url + "'" +
         						"data-animated='"+	response.data[i].images.fixed_height.url + "'" +
         						"data-still='" +	response.data[i].images.fixed_height_still.url + "'" +
         						"data='still' class='image'>");
+        // put ratings in upper case letters
         var y = response.data[i].rating.toUpperCase();
         $("#rating"+ i).html("<h3>Rating: " + y + "</h3>");
         $("#title"+ i).html("<h5><a href='"+response.data[i].images.original.url+"' target='_blank'>"+ response.data[i].images.original.url + "</h5>");
@@ -41,10 +43,8 @@ function renderButtons() {
        // Looping through the array of movies
        for (var i = 0; i < movieArray.length; i++) {
 
-         // Then dynamicaly generating buttons for each movie in the array
-         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-         //$("#movies-view").append(("<button class'movie mybutton' data-name='"+movies[i]+"'>")+movies[i] +("</button>"));
-         console.log(movieArray[i]);
+         // Generate buttons for each movie in the array
+
          var a = $("<button>");
          // Adding a class of movie to our button
          a.addClass("btn btn-md btn-success movie");
@@ -60,21 +60,21 @@ function renderButtons() {
 function switchImage () {
 		
 		if ($(this).attr("data") === "still") {
-			
+			// switch from still to moving image
 			$(this).attr("src", $(this).attr("data-animated"));
 			$(this).attr("data", "animated");
-			console.log($(this).attr("data"));
 			}
+
 		else {
-			
+			// switch back from moving to still
 			$(this).attr("src", $(this).attr("data-still"));
 			$(this).attr("data", "still");
-			console.log($(this).attr("data"));
 		}
 }
 
 
 $(document).ready(function () {
+
 	renderButtons();
 
 	$("#addmovie").on("click", function(event) {
@@ -95,6 +95,12 @@ $(document).ready(function () {
     	}
 
      });
+	// on click events to display the giff and
+	// switch the still giff for the moving giff and back
 	$(document).on("click", ".movie", displayGiff);
 	$(document).on("click", ".image", switchImage);
+	$("#reset").on("click", function () {
+		movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
+		renderButtons();
+	});
 });
