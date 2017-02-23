@@ -3,7 +3,7 @@ var movieTitle = "";
 
 
     
-var movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings"];
+var movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars"];
  
 
 
@@ -47,7 +47,7 @@ function renderButtons() {
          console.log(movieArray[i]);
          var a = $("<button>");
          // Adding a class of movie to our button
-         a.addClass("btn btn-lg btn-success movie");
+         a.addClass("btn btn-md btn-success movie");
          // Adding a data-attribute
          a.attr("data-name", movieArray[i]);
          // Providing the initial button text
