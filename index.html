@@ -12,30 +12,28 @@
 
 </head>
 <body>
-	<!--div id="rating0"></div>
-	<div id="display0"></div>
-	<div id="rating1"></div>
-	<div id="display1"></div>
-	<div id="rating2"></div>
-	<div id="display2"></div-->
+	
 	<section>
+	<div class="row mybuttons">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fixedheader mybuttons">
+			<div id="button-view" class="text-center topsect"></div><br>
+
+			<form id="movie-form" class="text-center">
+     			<h4>
+     				<label for="movie-input">Add a Movie:</label>
+     				<input type="text" id="movie-input"><br>
+     				<!-- Button triggers giff display below to be added/changed -->
+     				<input id="addmovie" type="submit" class="btn btn-md btn-primary topsect" value="Add a Movie">
+				</h4>
+     			<br>
+   			</form>
+   		</div>
+   	</div>
+
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div id="button-view" class="text-center"></div><br>
-		</div>
-	</div>
-	<form id="movie-form" class="text-center">
-     	<label for="movie-input">Add a Movie</label>
-     	<input type="text" id="movie-input"><br>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tablesect">
 
-     	<!-- Button triggers new movie to be added -->
-     	<input id="addmovie" type="submit" class="btn btn-lg btn-primary" value="Add a Movie"><br>
-   </form>
-
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-			<div class="panel panel-default">
+			<div class="panel panel-default mybuttons">
   				<!-- Default panel contents -->
   				<div class="panel-heading text-center">
   				<h1>Search for moving Giff's</h1>
@@ -44,72 +42,70 @@
 
   				<!-- Table -->
   				<table class="table table-center">
-  					<tr>
-    					<th></th>
-    					<td id="rating0" class="myrating text-center"></td>
-    					<td id="rating1" class="myrating text-center"></td> 
-    					<td id="rating2" class="myrating text-center"></td>
-    					<td id="rating3" class="myrating text-center"></td>
+  					<!-- first set of images -->
+  					<tr class="text-center">
+    					<td id="rating0" class="myrating"></td>
+    					<td id="rating1" class="myrating"></td> 
+    					<td id="rating2" class="myrating"></td>
     				</tr>
   					<tr class="text-center">
-  						<th></th>
     					<td id="display0" class="mydisplay"></td>
     					<td id="display1" class="mydisplay"></td> 
     					<td id="display2" class="mydisplay"></td>
-    					<td id="display3" class="mydisplay"></td> 
   					</tr>
   					<tr class="text-center">
-  						<th></th>
     					<td id="title0" class="mytitle"></td>
     					<td id="title1" class="mytitle"></td> 
     					<td id="title2" class="mytitle"></td>
-    					<td id="title3" class="mytitle"></td>
   					</tr>
-  					
+  					<!-- second set of images -->
 					<tr class="text-center">
-    					<th></th>
+    					<td id="rating3" class="myrating"></td> 
     					<td id="rating4" class="myrating"></td>
-    					<td id="rating5" class="myrating"></td> 
-    					<td id="rating6" class="myrating"></td>
-    					<td id="rating7" class="myrating"></td>
+    					<td id="rating5" class="myrating"></td>
     				</tr>
     				<tr class="text-center">
-  						<th></th>
+    					<td id="display3" class="mydisplay"></td> 
     					<td id="display4" class="mydisplay"></td>
     					<td id="display5" class="mydisplay"></td> 
-    					<td id="display6" class="mydisplay"></td>
-    					<td id="display7" class="mydisplay"></td> 
   					</tr>
   					<tr class="text-center">
-  						<th></th>
+    					<td id="title3" class="mytitle"></td> 
     					<td id="title4" class="mytitle"></td>
-    					<td id="title5" class="mytitle"></td> 
-    					<td id="title6" class="mytitle"></td>
-    					<td id="title7" class="mytitle"></td>
+    					<td id="title5" class="mytitle"></td>
   					</tr>
-  					
+  					<!-- third set of images -->
     				<tr class="text-center">
-    					<th></th>
+    					<td id="rating6" class="myrating"></td> 
+    					<td id="rating7" class="myrating"></td>
     					<td id="rating8" class="myrating"></td>
+    				</tr>
+    				<tr class="text-center">
+    					<td id="display6" class="mydisplay"></td> 
+    					<td id="display7" class="mydisplay"></td>
+    					<td id="display8" class="mydisplay"></td> 
+  					</tr>
+  					<tr class="text-center">
+    					<td id="title6" class="mytitle"></td> 
+    					<td id="title7" class="mytitle"></td>
+    					<td id="title8" class="mytitle"></td>
+  					</tr>
+  					<!-- forth set of images -->
+  					<tr class="text-center">
     					<td id="rating9" class="myrating"></td> 
     					<td id="rating10" class="myrating"></td>
     					<td id="rating11" class="myrating"></td>
     				</tr>
     				<tr class="text-center">
-  						<th></th>
-    					<td id="display8" class="mydisplay"></td>
     					<td id="display9" class="mydisplay"></td> 
     					<td id="display10" class="mydisplay"></td>
     					<td id="display11" class="mydisplay"></td> 
   					</tr>
   					<tr class="text-center">
-  						<th></th>
-    					<td id="title8" class="mytitle"></td>
     					<td id="title9" class="mytitle"></td> 
     					<td id="title10" class="mytitle"></td>
     					<td id="title11" class="mytitle"></td>
   					</tr>
-  					
   				</table>
 			</div>
 		</div>

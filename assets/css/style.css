@@ -1,7 +1,40 @@
+body {
+	background: #dcdcdc;
+}
 section {
-	min-width: 600px;
-	margin: 5px auto;
+	background: #dcdcdc;
+	min-width: 500px;
+	margin: 0px auto;
 }
 .btn {
 	margin: 5px;
+}
+table {
+	margin: 5px;
+	padding: 5px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th  {
+ border: none;
+}
+.panel-heading {
+	background-image: url(../images/triangular.png);
+}
+.mybuttons {
+	background-image: url(../images/redox_02.png);
+	max-width: 1600px;
+	margin: 0px auto;
+}
+.topsect {
+	margin-top: 15px;
+}
+.fixedheader {
+	position: fixed;
+	z-index: 2;
+	top: 0px;
+}
+.tablesect {
+	position: absolute;
+	top: 200px;
+	left: 1px;
 }

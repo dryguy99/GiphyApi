@@ -28,7 +28,7 @@ $.ajax({
         						"data='still' class='image'>");
         var y = response.data[i].rating.toUpperCase();
         $("#rating"+ i).html("<h3>Rating: " + y + "</h3>");
-        $("#title"+ i).html("<h5><a href='"+response.data[i].images.fixed_height.url+"' target='_blank'>"+ response.data[i].images.fixed_height.url + "</h5>");
+        $("#title"+ i).html("<h5><a href='"+response.data[i].images.original.url+"' target='_blank'>"+ response.data[i].images.original.url + "</h5>");
       }
     });
 }
@@ -91,6 +91,7 @@ $(document).ready(function () {
 
     	// Calling renderButtons which handles the processing of our movie array
 		renderButtons();
+		$('#movie-input').val("");
     	}
 
      });
