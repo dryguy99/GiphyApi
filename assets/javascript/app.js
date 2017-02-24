@@ -98,6 +98,11 @@ $(document).ready(function () {
 	$("#reset").on("click", function () {
 		event.preventDefault();
 		movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
+		for (i=0; i < 12; i++) {
+			$("#display"+ i).html("");
+			$("#rating"+ i).html("");
+			$("#title"+ i).html("");
+			}
 		renderButtons();
 	});
 	$("#resetall").on("click", function () {
