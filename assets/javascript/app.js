@@ -5,7 +5,7 @@ var topicArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lor
 function displayGiff() {
 
        var title = $(this).attr('data-name');
-       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=dc6zaTOxFJmzC&limit=12";
+       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=dc6zaTOxFJmzC&limit=12";
 
 	$.ajax({
       url: queryURL,
