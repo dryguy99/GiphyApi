@@ -3,7 +3,7 @@ var movieTitle = "";
 
 
     
-var movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
+var topicArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
  
 
 
@@ -39,7 +39,7 @@ function renderButtons() {
        $("#button-view").empty();
 
        // Looping through the array of movies
-       for (var i = 0; i < movieArray.length; i++) {
+       for (var i = 0; i < topicArray.length; i++) {
 
          // Generate buttons for each movie in the array
 
@@ -47,9 +47,9 @@ function renderButtons() {
          // Adding a class of movie to our button
          a.addClass("btn btn-md btn-success movie");
          // Adding a data-attribute
-         a.attr("data-name", movieArray[i]);
+         a.attr("data-name", topicArray[i]);
          // Providing the initial button text
-         a.text(movieArray[i]);
+         a.text(topicArray[i]);
          // Adding the button to the button-view div
          $("#button-view").append(a);
        }
@@ -84,7 +84,7 @@ $(document).ready(function () {
     	// if nothing is inputed do nothing
     	if (!(movie === "")) {   
     		// The movie from the textbox is then added to our array
-    		movieArray.push(movie);
+    		topicArray.push(movie);
     		// Calling renderButtons which handles the processing of our movie array
 			renderButtons();
 			$('#movie-input').val(""); // clear input field
@@ -97,7 +97,7 @@ $(document).ready(function () {
 	$(document).on("click", ".image", switchImage);
 	$("#reset").on("click", function () {
 		event.preventDefault();
-		movieArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
+		topicArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
 		for (i=0; i < 12; i++) {
 			$("#display"+ i).html("");
 			$("#rating"+ i).html("");
@@ -107,7 +107,7 @@ $(document).ready(function () {
 	});
 	$("#resetall").on("click", function () {
 		event.preventDefault();
-		movieArray = [];
+		topicArray = [];
 		renderButtons();
 	});
 });
