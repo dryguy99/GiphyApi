@@ -1,18 +1,13 @@
 //Giphy search using API
-var movieTitle = "";
-
-
-    
+var movieTitle = "";    
 var topicArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
  
-
-
-
 function displayGiff() {
 
        var title = $(this).attr('data-name');
        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=dc6zaTOxFJmzC&limit=12";
-$.ajax({
+
+	$.ajax({
       url: queryURL,
       method: 'GET'
     }).done(function(response) {
@@ -38,15 +33,13 @@ function renderButtons() {
        // Deleting the buttons prior to adding new movies
        $("#button-view").empty();
 
-       // Looping through the array of movies
+       // Looping through the array of topics
        for (var i = 0; i < topicArray.length; i++) {
-
          // Generate buttons for each movie in the array
-
          var a = $("<button>");
-         // Adding a class of movie to our button
+         // Adding classes to our button for bootstrap and my styling
          a.addClass("btn btn-md btn-success movie");
-         // Adding a data-attribute
+         // Adding a data-attribute for the ajax get
          a.attr("data-name", topicArray[i]);
          // Providing the initial button text
          a.text(topicArray[i]);
@@ -54,7 +47,7 @@ function renderButtons() {
          $("#button-view").append(a);
        }
      }
-
+// switch from still to moving image and back again
 function switchImage () {
 		
 		if ($(this).attr("data") === "still") {
@@ -69,7 +62,14 @@ function switchImage () {
 			$(this).attr("data", "still");
 		}
 }
-
+// clears the table of all data
+function clearImages () {
+	for (i=0; i < 12; i++) {
+			$("#display"+ i).html("");
+			$("#rating"+ i).html("");
+			$("#title"+ i).html("");
+			}
+}
 
 $(document).ready(function () {
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
     	// This line grabs the input from the textbox
     	var movie = $("#movie-input").val().trim();
 
-    	// if nothing is inputed do nothing
+    	// only add a string to the array if there is a string to add.
     	if (!(movie === "")) {   
     		// The movie from the textbox is then added to our array
     		topicArray.push(movie);
@@ -93,21 +93,22 @@ $(document).ready(function () {
 
 	// on click events to display the giff and
 	// switch the still giff for the moving giff and back
-	$(document).on("click", ".movie", displayGiff);
-	$(document).on("click", ".image", switchImage);
+	$(document).on("click", ".movie", displayGiff); //click a movie button to display the images
+	$(document).on("click", ".image", switchImage); // swaps the still image for the moving giff
+	
+	//reset the page to its initial state
 	$("#reset").on("click", function () {
 		event.preventDefault();
 		topicArray = ["Titanic", "Beverly Hills Cop", "The Princess Bride", "The Lord of the Rings", "Monty Python and the Holy Grail", "Star Wars", "Do the Right Thing"];
-		for (i=0; i < 12; i++) {
-			$("#display"+ i).html("");
-			$("#rating"+ i).html("");
-			$("#title"+ i).html("");
-			}
+		clearImages();
 		renderButtons();
 	});
+
+	// resets page and clears all topicArray buttons
 	$("#resetall").on("click", function () {
 		event.preventDefault();
 		topicArray = [];
+		clearImages();
 		renderButtons();
 	});
 });
