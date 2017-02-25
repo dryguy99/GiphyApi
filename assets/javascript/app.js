@@ -82,13 +82,14 @@ $(document).ready(function () {
     	var movie = $("#movie-input").val().trim();
 
     	// only add a string to the array if there is a string to add.
-    	if (!(movie === "")) {   
+    	if (!(movie === "") && (topicArray.indexOf(movie) === -1)) {   
     		// The movie from the textbox is then added to our array
     		topicArray.push(movie);
     		// Calling renderButtons which handles the processing of our movie array
 			renderButtons();
 			$('#movie-input').val(""); // clear input field
     		}
+      else { $('#movie-input').val(""); }
      });
 
 	// on click events to display the giff and
